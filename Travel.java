@@ -26,7 +26,7 @@ public class Travel
         System.out.println("Processing: Done!          ");
     }
 
-    static void send(String e, String a,int x,String p,String q)
+    static void send(String e, String a,int x,String p,String q,String f)
     {
         final String username = "ticketproject1@gmail.com";
         final String password = "reet7565";
@@ -56,11 +56,11 @@ public class Travel
                     InternetAddress.parse(e)
             );
             message.setSubject("Your Booking with PNR: "+a);
-            message.setText("Dear "+p+" "+q+"\n"+"Your booking with PNR: "+a+" has been confirmed!\nSeat: "+x);
+            message.setText("Dear "+p+" "+q+"\n"+"Your booking with PNR: "+a+" has been "+f+"\nSeat no: "+x);
 
             Transport.send(message);
 
-            progress();
+            //progress();
 
             System.out.println("Email Sent!!");
 
@@ -99,7 +99,7 @@ public class Travel
                 System.out.println("Your PNR is: "+b[y].id);
                 System.out.println();
 
-                send(b[y].email,b[y].id,b[y].seat,b[y].fname,b[y].lname);
+                send(b[y].email,b[y].id,b[y].seat,b[y].fname,b[y].lname,"confirmed");
 
             }
             else
@@ -107,7 +107,11 @@ public class Travel
                 throw new Exception();
             }
         }
-        catch(SeatException | NumberFormatException e)
+        catch(SeatException e)
+        {
+            System.out.println(e);
+        }
+        catch(NumberFormatException e)
         {
             System.out.println(e);
         }
@@ -170,6 +174,7 @@ public class Travel
                     System.out.println();
                     progress();
                     System.out.println("BOOKING DELETED!!\n");
+                    send(b[i].email,b[i].id,b[i].seat,b[i].fname,b[i].lname,"cancelled");
                 }
                 /*else
                 {
