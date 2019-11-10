@@ -198,7 +198,7 @@ public class Travel
         InputStreamReader read=new InputStreamReader(System.in);
         BufferedReader in=new BufferedReader(read);
 
-        System.out.println("-----------------------------------------------BUS RESERVATION SYSTEM-----------------------------------------------");
+        System.out.println("-----------------------------------------------BUS TICKETING SYSTEM-----------------------------------------------");
 
         for(int i=0;i<100;i++)
         {
@@ -210,7 +210,7 @@ public class Travel
         }
        while(true) {
             System.out.println("Enter your choice:");
-            System.out.println("------------------------------------------------------------------------------");
+            System.out.println("-------------------------------------------------------------------------------------");
             System.out.println("1)New Booking\n2)Retrieve Booking\n3)Delete Booking\n4)Exit Program");
             System.out.println();
             int ch=Integer.parseInt(in.readLine());
@@ -218,7 +218,7 @@ public class Travel
             {
                 case 1:
                 {
-                    System.out.println("------------------------------NEW BOOKING------------------------------");
+                    System.out.println("------------------------------NEW BOOKING------------------------------------");
                     addbook();
                     System.out.println();
                     break;
@@ -226,7 +226,7 @@ public class Travel
 
                 case 2:
                 {
-                    System.out.println("------------------------------RETRIEVE BOOKING------------------------------");
+                    System.out.println("------------------------------RETRIEVE BOOKING-------------------------------");
                     System.out.println("Enter last name used in booking: ");
                     String x=in.readLine();
                     System.out.println();
@@ -241,7 +241,7 @@ public class Travel
 
                 case 3:
                 {
-                    System.out.println("------------------------------DELETE BOOKING------------------------------");
+                    System.out.println("------------------------------DELETE BOOKING---------------------------------");
                     System.out.println("Enter last name used in booking: ");
                     String x=in.readLine();
                     System.out.println();
