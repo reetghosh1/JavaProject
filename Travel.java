@@ -29,7 +29,7 @@ public class Travel
     static void send(String e, String a,int x,String p,String q,String f)
     {
         final String username = "ticketproject1@gmail.com";
-        final String password = "reet7565";
+        final String password = "......";
 
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
